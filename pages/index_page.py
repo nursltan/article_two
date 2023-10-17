@@ -1,10 +1,8 @@
-import pytest
-import pages
-import time
+from playwright.sync_api import Page
+import config
 
 
-class TestFooter:
+class IndexPage:
 
-    def test_user_should_be_able_to_open_popup_select_subscription_plan(self, page):
-        pages.index_page.open_index_page(page)
-        time.sleep(10)
+    def open_index_page(self, page: Page) -> None:
+        page.goto(config.url.DOMAIN)
